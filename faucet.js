@@ -1,5 +1,5 @@
 const express = require('express');
-const { DirectSecp256k1Wallet } = require('@cosmjs/proto-signing');
+const { DirectSecp256k1HdWallet } = require('@cosmjs/proto-signing');
 const { SigningStargateClient } = require('@cosmjs/stargate');
 const { coins } = require('@cosmjs/stargate');
 const fs = require('fs');
@@ -76,7 +76,7 @@ app.post('/', async (req, res) => {
     }
     
     try {
-        const walletSigner = await DirectSecp256k1Wallet.fromMnemonic(MNEMONIC, { prefix: "osmo" });
+        const walletSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, { prefix: "osmo" });
         const [firstAccount] = await walletSigner.getAccounts();
         const client = await SigningStargateClient.connectWithSigner(RPC_ENDPOINT, walletSigner);
 
