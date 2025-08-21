@@ -1,0 +1,15 @@
+{
+  "name": "osmosis-faucet",
+  "version": "1.0.0",
+  "description": "A simple Node.js faucet backend",
+  "main": "faucet.js",
+  "scripts": {
+    "start": "node faucet.js"
+  },
+  "dependencies": {
+    "@cosmjs/proto-signing": "^0.32.2",
+    "@cosmjs/stargate": "^0.32.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security"
+  }
+}
